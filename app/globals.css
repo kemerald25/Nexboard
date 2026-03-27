@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 231 28% 5%;
+    --foreground: 210 20% 98%;
+    --card: 231 28% 7%;
+    --card-foreground: 210 20% 98%;
+    --popover: 231 28% 5%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 243 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 231 15% 15%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 231 15% 15%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 231 15% 15%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --success: 174 100% 45%;
+    --border: 231 15% 15%;
+    --input: 231 15% 15%;
+    --ring: 243 100% 70%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-primary/30 selection:text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Noise Texture Overlay */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: brightness(100%) contrast(150%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+/* Smooth counting transition */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.05];
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-2xl border border-white/[0.05];
+}
+
