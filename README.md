@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexboard — Premium SaaS Admin Dashboard
 
-## Getting Started
+Nexboard is a production-grade, high-performance SaaS analytics and fintech dashboard built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. It features a modern, "dark-first" aesthetic with a focus on data density, micro-animations, and premium user experience.
 
-First, run the development server:
+![Nexboard Preview](https://grainy-gradients.vercel.app/noise.svg)
 
+## 💎 Design Philosophy
+- **Fintech Aesthetic**: Near-black surfaces (#0A0B0F) with electric indigo accents (#6C63FF) and vibrant status indicators.
+- **Glassmorphism**: Subtle backdrop blurs and translucent surfaces for a high-end feel.
+- **Micro-Animations**: Staggered entrances, smooth sidebar transitions, and interactive charts powered by **Framer Motion**.
+- **Typography**: `DM Sans` for a clean UI and `JetBrains Mono` for precise, tabular data display.
+
+## 🚀 Core Features
+- **Unified Dashboard**: Real-time KPI monitoring with interactive revenue and activity charts.
+- **Advanced Analytics**: Compare performance metrics against market benchmarks with multi-series line charts.
+- **Portfolio Management**: Visualize asset distribution and manage individual holdings.
+- **Transaction History**: Comprehensive, filterable, and searchable records of all activities.
+- **Alert Center**: Sophisticated notification management for security, price targets, and system updates.
+- **Account Settings**: Polished profile management, security configurations, and user preferences.
+
+## 🛠️ Technology Stack
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Utils**: `clsx`, `tailwind-merge`
+
+## 📦 Project Structure
+```text
+├── app/
+│   ├── (dashboard)/       # Shared layout and dashboard pages
+│   │   ├── analytics/     # Performance & insights
+│   │   ├── portfolio/     # Asset management
+│   │   ├── transactions/  # History records
+│   │   ├── alerts/        # Notification center
+│   │   └── settings/      # User configurations
+│   └── layout.tsx         # Root layout with custom fonts
+├── components/
+│   ├── dashboard/         # UI components (Sidebar, Charts, MetricCards)
+│   └── ui/                # Base UI elements
+├── lib/
+│   ├── mock-data.ts       # Central data store for the prototype
+│   └── utils.ts           # Styling & formatting utilities
+└── public/                # Static assets
+```
+
+## 🏁 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/nexboard.git
+cd nexboard
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run the development server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+This project is licensed under the MIT License.
