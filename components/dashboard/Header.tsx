@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Search, Bell, ChevronDown, Command } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface HeaderProps {
   onNotificationClick: () => void;
@@ -42,11 +41,13 @@ export function Header({ onNotificationClick }: HeaderProps) {
 
         {/* User Profile */}
         <button className="flex items-center gap-3 pl-2 pr-1 py-1 rounded-xl hover:bg-white/5 transition-all group border border-transparent hover:border-white/5">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-indigo to-brand-cyan flex items-center justify-center text-xs font-bold text-white shadow-lg overflow-hidden">
-            <img 
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-indigo to-brand-cyan flex items-center justify-center text-xs font-bold text-white shadow-lg overflow-hidden relative">
+            <Image 
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" 
               alt="Avatar"
-              className="w-full h-full object-cover"
+              fill
+              unoptimized
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col items-start sr-only sm:not-sr-only">

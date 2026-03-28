@@ -2,10 +2,9 @@
 
 import React from "react";
 import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
-import { MetricCard } from "@/components/dashboard/MetricCard";
 import { mockPerformanceData, mockAnalyticsStats } from "@/lib/mock-data";
 import { motion } from "framer-motion";
-import { BarChart3, TrendingUp, Users, Clock, MousePointer2 } from "lucide-react";
+import { BarChart3, TrendingUp } from "lucide-react";
 
 export default function AnalyticsPage() {
   return (

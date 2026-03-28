@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   LayoutDashboard,
   BarChart3,
@@ -10,7 +10,6 @@ import {
   Bell,
   Settings,
   ChevronLeft,
-  Search,
   Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";

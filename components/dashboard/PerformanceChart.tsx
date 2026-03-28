@@ -9,14 +9,25 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Legend,
 } from "recharts";
 
-interface PerformanceChartProps {
-  data: any[];
+interface PerformanceDataPoint {
+  date: string;
+  portfolio: number;
+  market: number;
 }
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+interface PerformanceChartProps {
+  data: PerformanceDataPoint[];
+}
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: { name: string; value: number; color: string }[];
+  label?: string;
+}
+
+const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
   if (active && payload && payload.length) {
     return (
       <div className="glass-dark p-4 rounded-xl border border-white/10 shadow-2xl">

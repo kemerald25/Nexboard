@@ -6,7 +6,6 @@ import {
   ArrowUpRight, 
   ArrowDownLeft, 
   MoreHorizontal,
-  ExternalLink,
   ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";

@@ -4,7 +4,7 @@ import React from "react";
 import { TransactionTable } from "@/components/dashboard/TransactionTable";
 import { mockTransactions } from "@/lib/mock-data";
 import { motion } from "framer-motion";
-import { List7, Search, Filter, Download } from "lucide-react";
+import { Search, Filter, Download } from "lucide-react";
 
 export default function TransactionsPage() {
   return (

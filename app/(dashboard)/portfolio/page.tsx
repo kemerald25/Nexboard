@@ -2,9 +2,9 @@
 
 import React from "react";
 import { AssetDistribution } from "@/components/dashboard/AssetDistribution";
-import { mockAssetDistribution, mockTransactions } from "@/lib/mock-data";
+import { mockAssetDistribution } from "@/lib/mock-data";
 import { motion } from "framer-motion";
-import { Wallet, ArrowUpRight, ArrowDownRight, Briefcase } from "lucide-react";
+import { Wallet, ArrowUpRight, Briefcase } from "lucide-react";
 
 export default function PortfolioPage() {
   return (
@@ -57,11 +57,11 @@ export default function PortfolioPage() {
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-bold text-white font-mono">
-                        ${(Math.random() * 50000 + 10000).toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                        ${(15000 + i * 5000).toLocaleString(undefined, { maximumFractionDigits: 2 })}
                       </p>
                       <div className="flex items-center gap-1 justify-end text-[10px] text-success">
                         <ArrowUpRight className="w-3 h-3" />
-                        <span>+{(Math.random() * 5).toFixed(2)}%</span>
+                        <span>+{(2 + i * 0.5).toFixed(2)}%</span>
                       </div>
                     </div>
                   </motion.div>

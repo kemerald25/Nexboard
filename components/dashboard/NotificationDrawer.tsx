@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Bell, Check, Info, AlertCircle, TrendingUp } from "lucide-react";
+import { X, Bell, Check, Info, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Notification } from "@/types";
 

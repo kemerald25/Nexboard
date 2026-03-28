@@ -6,28 +6,28 @@ export const mockMetrics: Metric[] = [
     value: "$124,592.00",
     change: 12.5,
     trend: "up",
-    sparklineData: Array.from({ length: 10 }, (_, i) => ({ value: 40 + Math.random() * 20 + i * 2 })),
+    sparklineData: [45, 52, 48, 61, 59, 72, 68, 75, 82, 90].map(v => ({ value: v })),
   },
   {
     title: "Monthly Revenue",
     value: "$42,850.50",
     change: 8.2,
     trend: "up",
-    sparklineData: Array.from({ length: 10 }, (_, i) => ({ value: 30 + Math.random() * 10 + i })),
+    sparklineData: [30, 35, 32, 40, 38, 45, 42, 50, 48, 55].map(v => ({ value: v })),
   },
   {
     title: "Active Users",
     value: "2,420",
     change: -2.4,
     trend: "down",
-    sparklineData: Array.from({ length: 10 }, (_, i) => ({ value: 50 - i * 2 + Math.random() * 5 })),
+    sparklineData: [50, 48, 45, 42, 44, 40, 38, 35, 37, 34].map(v => ({ value: v })),
   },
   {
     title: "Conversion Rate",
     value: "4.2%",
     change: 0.6,
     trend: "up",
-    sparklineData: Array.from({ length: 10 }, (_, i) => ({ value: 10 + Math.random() * 5 })),
+    sparklineData: [10, 12, 11, 14, 13, 16, 15, 18, 17, 20].map(v => ({ value: v })),
   },
 ];
 

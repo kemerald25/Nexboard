@@ -101,7 +101,7 @@ export default function AlertsPage() {
                     { label: "Push Notifications", desc: "Receive alerts directly on your browser or device.", checked: true },
                     { label: "Email Summaries", desc: "Get a daily breakdown of your transactions and alerts.", checked: false },
                     { label: "SMS Critical Alerts", desc: "High-priority security alerts sent to your phone.", checked: true },
-                ].map((item, i) => (
+                ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between gap-8 py-4 border-b border-white/5 last:border-0">
                         <div>
                             <p className="text-base font-bold text-white font-sans">{item.label}</p>

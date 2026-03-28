@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { User, Lock, Eye, Globe, CreditCard, Bell, Shield, LogOut, ChevronRight } from "lucide-react";
 
 export default function SettingsPage() {
@@ -64,11 +65,12 @@ export default function SettingsPage() {
             <section className="glass p-8 rounded-3xl space-y-8">
               <div className="flex items-center gap-6">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-indigo to-brand-cyan p-[2px]">
-                  <div className="w-full h-full rounded-2xl bg-surface flex items-center justify-center overflow-hidden">
-                    <img 
+                  <div className="w-full h-full rounded-2xl bg-surface flex items-center justify-center overflow-hidden relative">
+                    <Image 
                       src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" 
                       alt="Avatar" 
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>

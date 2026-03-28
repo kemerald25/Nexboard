@@ -16,6 +16,8 @@ interface MetricCardProps {
 }
 
 function CountUp({ value }: { value: string }) {
+  const [mounted, setMounted] = useState(false);
+  
   // Simple numeric extraction for animation
   const numericPart = parseFloat(value.replace(/[^0-9.]/g, ""));
   const prefix = value.match(/^[^0-9]*/)?.[0] || "";
@@ -32,17 +34,24 @@ function CountUp({ value }: { value: string }) {
     return `${prefix}${current.toLocaleString(undefined, { minimumFractionDigits: value.includes(".") ? 2 : 0, maximumFractionDigits: 2 })}${suffix}`;
   });
 
-  const [counter, setCounter] = useState(displayValue.get());
+  const [counter, setCounter] = useState(value); // Initial value set to the string to match server
 
   useEffect(() => {
+    setMounted(true);
     spring.set(numericPart);
     return displayValue.onChange((v) => setCounter(v));
   }, [numericPart, spring, displayValue]);
 
-  return <span>{counter}</span>;
+  return <span className="tabular-nums">{mounted ? counter : value}</span>;
 }
 
 export function MetricCard({ title, value, change, trend, sparklineData, index }: MetricCardProps) {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -71,24 +80,26 @@ export function MetricCard({ title, value, change, trend, sparklineData, index }
         </div>
 
         <div className="h-10 w-24">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={sparklineData}>
-              <defs>
-                <linearGradient id={`gradient-${index}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor={trend === "up" ? "#00E5FF" : "#FF4D8D"} stopOpacity={0.4} />
-                  <stop offset="100%" stopColor={trend === "up" ? "#00E5FF" : "#FF4D8D"} stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <Area
-                type="monotone"
-                dataKey="value"
-                stroke={trend === "up" ? "#00E5FF" : "#FF4D8D"}
-                strokeWidth={2}
-                fill={`url(#gradient-${index})`}
-                isAnimationActive={false}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+          {mounted && (
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={sparklineData}>
+                <defs>
+                  <linearGradient id={`gradient-${index}`} x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor={trend === "up" ? "#00E5FF" : "#FF4D8D"} stopOpacity={0.4} />
+                    <stop offset="100%" stopColor={trend === "up" ? "#00E5FF" : "#FF4D8D"} stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke={trend === "up" ? "#00E5FF" : "#FF4D8D"}
+                  strokeWidth={2}
+                  fill={`url(#gradient-${index})`}
+                  isAnimationActive={false}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          )}
         </div>
       </div>
 
