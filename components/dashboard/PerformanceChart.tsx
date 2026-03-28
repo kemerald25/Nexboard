@@ -32,7 +32,7 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
     return (
       <div className="glass-dark p-4 rounded-xl border border-white/10 shadow-2xl">
         <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2 font-sans">{label}</p>
-        {payload.map((item: any, i: number) => (
+        {payload.map((item, i: number) => (
           <div key={i} className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
             <p className="text-sm font-bold text-white font-mono">

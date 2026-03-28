@@ -25,7 +25,7 @@ interface ChartPayloadItem {
   color: string;
   payload?: {
     color?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 

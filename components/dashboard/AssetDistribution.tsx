@@ -9,7 +9,7 @@ interface AssetDistributionProps {
 
 interface CustomTooltipProps {
   active?: boolean;
-  payload?: { name: string; value: number; [key: string]: any }[];
+  payload?: { name: string; value: number; color?: string; [key: string]: unknown }[];
 }
 
 const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
@@ -59,7 +59,7 @@ export function AssetDistribution({ data }: AssetDistributionProps) {
                 height={36} 
                 content={({ payload }) => (
                   <div className="flex justify-center gap-4 mt-4">
-                    {payload?.map((entry: { value: any; color?: string }, index: number) => (
+                    {payload?.map((entry: { value?: string | number; color?: string }, index: number) => (
                       <div key={`legend-${index}`} className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }} />
                         <span className="text-xs text-muted-foreground font-sans">{entry.value}</span>
